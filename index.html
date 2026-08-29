@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sichuan Taoyu Technology Co., Ltd | Global Enterprise Software & IT Services</title>
+    <meta name="description" content="Sichuan Taoyu Technology Co., Ltd - Professional Enterprise IT Outsourcing Services: Full-Stack Development, Cloud Architecture, AI Agent Systems & Hardware Integration. 四川韬誉科技有限公司 - 面向全球企业的软件开发与技术外包服务。">
+    <style>
+        :root {
+            --bg-color: #0b0f19;
+            --card-bg: rgba(22, 31, 48, 0.7);
+            --card-border: rgba(255, 255, 255, 0.08);
+            --text-primary: #f3f4f6;
+            --text-secondary: #9ca3af;
+            --accent-gradient: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+            --glow-color: rgba(59, 130, 246, 0.15);
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .bg-grid {
+            position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+            background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+            background-size: 30px 30px; z-index: -1; pointer-events: none;
+        }
+
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+
+        header {
+            padding: 20px 0; border-bottom: 1px solid var(--card-border);
+            backdrop-filter: blur(10px); position: sticky; top: 0; z-index: 100;
+            background: rgba(11, 15, 25, 0.85);
+        }
+
+        .nav-container { display: table; width: 100%; }
+        .logo-box { display: table-cell; vertical-align: middle; }
+        .logo-title {
+            font-size: 18px; font-weight: 700;
+            background: var(--accent-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        }
+        .logo-sub { font-size: 12px; color: var(--text-secondary); display: block; margin-top: 2px; }
+
+        .nav-links { display: table-cell; vertical-align: middle; text-align: right; }
+        .nav-links a { color: var(--text-secondary); text-decoration: none; margin-left: 20px; font-size: 14px; }
+        .nav-links a:hover { color: var(--text-primary); }
+
+        .hero { padding: 80px 0 50px; text-align: center; }
+        .badge {
+            display: inline-block; padding: 6px 16px; border-radius: 20px;
+            background: rgba(59, 130, 246, 0.1); border: 1px solid rgba(59, 130, 246, 0.3);
+            color: #60a5fa; font-size: 13px; font-weight: 500; margin-bottom: 20px;
+        }
+        .hero h1 { font-size: 42px; font-weight: 800; line-height: 1.25; margin-bottom: 20px; }
+        .hero h1 span { background: var(--accent-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .hero p { font-size: 16px; color: var(--text-secondary); max-width: 720px; margin: 0 auto 30px; }
+
+        .cta-button {
+            display: inline-block; padding: 14px 32px; border-radius: 8px;
+            background: var(--accent-gradient); color: #fff; font-weight: 600; text-decoration: none;
+            box-shadow: 0 4px 20px var(--glow-color); transition: transform 0.2s;
+        }
+        .cta-button:hover { transform: translateY(-2px); }
+
+        .section-title { text-align: center; margin: 70px 0 35px; }
+        .section-title h2 { font-size: 26px; font-weight: 700; margin-bottom: 8px; }
+        .section-title p { color: var(--text-secondary); font-size: 14px; }
+
+        .grid { display: table; width: 100%; table-layout: fixed; border-spacing: 20px; margin: 0 -20px; }
+        .grid-row { display: table-row; }
+        .card {
+            display: table-cell; background: var(--card-bg); border: 1px solid var(--card-border);
+            border-radius: 12px; padding: 28px; vertical-align: top;
+        }
+        .card-icon {
+            width: 44px; height: 44px; border-radius: 10px; background: rgba(59, 130, 246, 0.1);
+            color: #60a5fa; text-align: center; line-height: 44px; font-size: 18px; margin-bottom: 16px; font-weight: bold;
+        }
+        .card h3 { font-size: 18px; margin-bottom: 8px; }
+        .card .cn-desc { font-size: 13px; color: #d1d5db; margin-bottom: 10px; font-weight: 500; }
+        .card .en-desc { color: var(--text-secondary); font-size: 13px; line-height: 1.5; }
+
+        .tags { margin-top: 16px; }
+        .tag {
+            display: inline-block; font-size: 11px; padding: 3px 8px; border-radius: 4px;
+            background: rgba(255, 255, 255, 0.05); color: var(--text-secondary); margin-right: 6px; margin-bottom: 6px;
+        }
+
+        .workflow-box { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 12px; padding: 30px; margin-top: 20px; }
+        .workflow-table { width: 100%; border-collapse: collapse; }
+        .workflow-table th, .workflow-table td { padding: 14px; text-align: left; border-bottom: 1px solid var(--card-border); }
+        .workflow-table th { color: var(--text-primary); font-size: 14px; }
+        .workflow-table td { color: var(--text-secondary); font-size: 13px; }
+
+        .contact-card {
+            background: linear-gradient(135deg, rgba(30, 58, 138, 0.3) 0%, rgba(17, 24, 39, 0.8) 100%);
+            border: 1px solid rgba(59, 130, 246, 0.3); border-radius: 16px; padding: 45px 30px; text-align: center; margin: 70px 0;
+        }
+        .contact-card h2 { font-size: 28px; margin-bottom: 12px; }
+        .contact-card p { color: var(--text-secondary); margin-bottom: 25px; font-size: 15px; }
+        .contact-info { display: inline-block; text-align: left; background: rgba(0, 0, 0, 0.3); padding: 20px 30px; border-radius: 8px; border: 1px solid var(--card-border); }
+        .contact-item { margin: 10px 0; font-size: 14px; color: var(--text-primary); }
+        .contact-item strong { color: #60a5fa; width: 140px; display: inline-block; }
+
+        footer { border-top: 1px solid var(--card-border); padding: 30px 0; text-align: center; color: var(--text-secondary); font-size: 13px; }
+
+        @media (max-width: 768px) {
+            .grid, .grid-row, .card { display: block; width: 100%; }
+            .card { margin-bottom: 20px; }
+            .hero h1 { font-size: 28px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-grid"></div>
+
+    <header>
+        <div class="container">
+            <div class="nav-container">
+                <div class="logo-box">
+                    <div class="logo-title">Sichuan Taoyu Technology Co., Ltd</div>
+                    <span class="logo-sub">四川韬誉科技有限公司</span>
+                </div>
+                <div class="nav-links">
+                    <a href="#services">服务范围 / Services</a>
+                    <a href="#process">服务流程 / Process</a>
+                    <a href="#contact">联系方式 / Contact</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="badge">Enterprise Global Software Engineering</div>
+            <h1>全球企业级软件开发与技术外包服务<br><span>Global IT Outsourcing & Technical Solutions</span></h1>
+            <p>四川韬誉科技有限公司为全球企业客户提供高效、可扩展的全栈应用开发、AI Agent 智能体集成、云架构与嵌入式/硬件软件定制服务。</p>
+            <p style="font-size: 14px; color: #9ca3af; margin-top: -15px;">Sichuan Taoyu Technology Co., Ltd delivers high-performance full-stack applications, AI integrations, cloud solutions, and embedded system software for enterprise clients worldwide.</p>
+            <a href="#contact" class="cta-button" style="margin-top: 15px;">获取技术方案 / Request Consultation</a>
+        </section>
+
+        <!-- Services Section -->
+        <div class="section-title" id="services">
+            <h2>核心业务范围 / Core Capabilities</h2>
+            <p>面向国际化商业需求的端到端技术交付方案 / End-to-end technical execution for global business</p>
+        </div>
+
+        <div class="grid">
+            <div class="grid-row">
+                <div class="card">
+                    <div class="card-icon">&lt;/&gt;</div>
+                    <h3>全栈与移动端开发<br><span style="font-size:14px;color:var(--text-secondary);">Full-Stack & Mobile Engineering</span></h3>
+                    <div class="cn-desc">提供高性能 Web 应用、跨平台移动 App 以及企业级中后台管理系统的定制研发。</div>
+                    <div class="en-desc">Custom development of high-performance web apps, cross-platform mobile apps, and enterprise management systems.</div>
+                    <div class="tags">
+                        <span class="tag">.NET 9</span><span class="tag">React</span><span class="tag">Next.js</span><span class="tag">Flutter</span>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-icon">AI</div>
+                    <h3>AI Agent 集成与自动化<br><span style="font-size:14px;color:var(--text-secondary);">AI Agent & Automation</span></h3>
+                    <div class="cn-desc">基于现代 AI Agent 架构，结合 MCP 协议打造企业级业务流程自动化与智能交互系统。</div>
+                    <div class="en-desc">Building enterprise workflow automation and intelligent systems using modern AI Agent architectures and MCP protocol.</div>
+                    <div class="tags">
+                        <span class="tag">AI Agents</span><span class="tag">MCP Integration</span><span class="tag">Workflow Automation</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid" style="margin-top: 0;">
+            <div class="grid-row">
+                <div class="card">
+                    <div class="card-icon">☁</div>
+                    <h3>云架构与 DevOps 服务<br><span style="font-size:14px;color:var(--text-secondary);">Cloud Infrastructure & DevOps</span></h3>
+                    <div class="cn-desc">企业级微服务架构设计、容器化部署、自动化 CI/CD 流水线搭建与服务器高可用维护。</div>
+                    <div class="en-desc">Microservice architecture, containerized deployments, CI/CD pipelines, and high-availability cloud maintenance.</div>
+                    <div class="tags">
+                        <span class="tag">Docker</span><span class="tag">Nginx</span><span class="tag">Linux / Ubuntu</span><span class="tag">CI/CD</span>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-icon">⚡</div>
+                    <h3>嵌入式与工业硬件软件<br><span style="font-size:14px;color:var(--text-secondary);">Embedded & Hardware Integration</span></h3>
+                    <div class="cn-desc">Android Kiosk 专用应用开发、串口/TCP 通信协议开发及工业自动化控制系统集成。</div>
+                    <div class="en-desc">Android Kiosk app development, serial/TCP communication protocols, and industrial control integration.</div>
+                    <div class="tags">
+                        <span class="tag">Android Kiosk</span><span class="tag">TCP/Serial</span><span class="tag">Embedded Systems</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Engineering Standards / Process -->
+        <div class="section-title" id="process">
+            <h2>服务交付流程 / Service Delivery Process</h2>
+            <p>规范、透明且敏捷的项目敏捷开发与交付流程 / Transparent, milestone-based development pipeline</p>
+        </div>
+
+        <div class="workflow-box">
+            <table class="workflow-table">
+                <thead>
+                    <tr>
+                        <th>阶段 / Phase</th>
+                        <th>核心交付物 / Key Deliverables</th>
+                        <th>质量保障 / Standard</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>1. 需求分析与定义<br><small style="color:#6b7280">Discovery & Spec</small></strong></td>
+                        <td>技术架构方案、API 接口规范文档<br><small style="color:#6b7280">Technical Spec & API Contracts</small></td>
+                        <td>明确范围与里程碑节点<br><small style="color:#6b7280">Clear Scope & Milestones</small></td>
+                    </tr>
+                    <tr>
+                        <td><strong>2. 架构与原型设计<br><small style="color:#6b7280">Architecture & Design</small></strong></td>
+                        <td>系统设计蓝图、高保真 UI 原型<br><small style="color:#6b7280">System Blueprint & UI Prototypes</small></td>
+                        <td>高扩展性与高安全性设计<br><small style="color:#6b7280">Scalable & Secure Design</small></td>
+                    </tr>
+                    <tr>
+                        <td><strong>3. 迭代研发与测试<br><small style="color:#6b7280">Sprint Development</small></strong></td>
+                        <td>模块化代码、定期进度 Demo<br><small style="color:#6b7280">Clean Code & Regular Demos</small></td>
+                        <td>单元测试与代码审查保障<br><small style="color:#6b7280">Testing & Code Review</small></td>
+                    </tr>
+                    <tr>
+                        <td><strong>4. 部署上线与运维<br><small style="color:#6b7280">Deployment & Handover</small></strong></td>
+                        <td>Docker 化部署、高并发压力测试<br><small style="color:#6b7280">Docker Setup & Launch</small></td>
+                        <td>高可用性与 SLA 运维保障<br><small style="color:#6b7280">High Availability Guarantee</small></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Contact Section -->
+        <section class="contact-card" id="contact">
+            <h2>联系我们 / Contact Us</h2>
+            <p>无论您的企业需要定制开发还是技术外包支持，我们的团队随时准备为您服务。</p>
+            <div class="contact-info">
+                <div class="contact-item"><strong>公司名称 / Company:</strong> Sichuan Taoyu Technology Co., Ltd（四川韬誉科技有限公司）</div>
+                <div class="contact-item"><strong>商务邮箱 / Email:</strong> taoyu@ha1.cc</div>
+                <div class="contact-item"><strong>服务区域 / Coverage:</strong> 全球（北美、欧洲、亚太及中国大陆）/ Global</div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Sichuan Taoyu Technology Co., Ltd. All rights reserved. 四川韬誉科技有限公司 版权所有</p>
+        </div>
+    </footer>
+</body>
+</html>
